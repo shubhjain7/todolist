@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>New Client</h1>
+<div class="form-container">
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Id</mat-label>
+            <input matInput type="number" name="id" maxlength="13" formControlName="id" >
+          </mat-form-field>
+      <mat-form-field>
+        <mat-label>Employee Name</mat-label>
+        <input matInput type="text" name="name" formControlName="employee_name" >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Salary</mat-label>
+        <input matInput type="number" name="salary"  formControlName="employee_salary">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput type="number" name="age" formControlName="employee_age">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>CreateAdt</mat-label>
+        <input matInput type="date" name="createdAt" formControlName="createdAt">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>UpdatedAt</mat-label>
+        <input matInput type="date" name="updatedAt" formControlName="updatedAt">
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button  type="button" (click)="onNoClick()">Cancel</button>
+      <button mat-button type="submit" color="accent"   >Submit</button>
+    </div>
+  </form>
+</div>
