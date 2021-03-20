@@ -5,10 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AllemployeesComponent } from './allemployees/allemployees.component';
-import { GetemployeeComponent } from './allemployees/getemployee/getemployee.component';
-import { AddemployeeComponent } from './allemployees/addemployee/addemployee.component';
-import {CategoryPipe} from './employee.pipe';
 
 import { MatInputModule} from '@angular/material/input';
 import { MatExpansionModule }from '@angular/material/expansion';
@@ -22,16 +18,21 @@ import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSortModule} from '@angular/material/sort';
 import { Routes, RouterModule } from '@angular/router';
+import { AlltaskComponent } from './alltask/alltask.component';
+import { CompletedtaskComponent } from './completedtask/completedtask.component';
+import { MarkedtaskComponent } from './markedtask/markedtask.component';
+import { TaskService } from './task.service';
+import { MarkTaskService } from './marktask.service';
+import { CompleteTaskService } from './completetask.service';
 //import {CdkTableModule} from '@angular/cdk/table';
 const routes:Routes=[];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AllemployeesComponent,
-    GetemployeeComponent,
-    AddemployeeComponent,
-    CategoryPipe
+    AlltaskComponent,
+    CompletedtaskComponent,
+    MarkedtaskComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +53,7 @@ const routes:Routes=[];
     [RouterModule.forRoot(routes)],
     //CdkTableModule
   ],
-  providers: [],
+  providers: [TaskService,MarkTaskService,CompleteTaskService],
   exports: [RouterModule],
   bootstrap: [AppComponent]
 })

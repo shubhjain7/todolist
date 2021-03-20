@@ -1,0 +1,7 @@
+<mat-card *ngIf="comptask.length>0">
+    <mat-list *ngFor="let task of comptask; let i=index">
+        <mat-list-item> {{task.task}} :{{name}}
+        </mat-list-item>
+    </mat-list>
+   
+</mat-card>
